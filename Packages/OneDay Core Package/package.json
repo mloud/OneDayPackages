@@ -1,0 +1,14 @@
+{
+  "name": "com.oneday.corepackage",
+  "author": { "name": "Mloud" },
+  "displayName": "Core package",
+  "version": "0.0.4",
+  "unity": "2021.3",
+  "description": "Core package",
+  "keywords": [
+    "core"
+  ],
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "1.1.2"
+  }
+}

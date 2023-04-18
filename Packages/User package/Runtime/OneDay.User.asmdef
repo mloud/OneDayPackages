@@ -1,0 +1,17 @@
+{
+    "name": "OneDay.User",
+    "rootNamespace": "",
+    "references": [
+        "GUID:4ff5121a91128f741807bd12ac0859df",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,17 @@
+{
+  "name": "com.oneday.playfabservicespackage",
+  "author": {
+    "name": "Mloud"
+  },
+  "displayName": "Playfab services package",
+  "version": "0.0.5",
+  "unity": "2021.3",
+  "description": "Playfab services package and other tools",
+  "keywords": [
+    "playfab"
+  ],
+  "dependencies": {
+    "com.oneday.corepackage": "0.0.4",
+    "com.oneday.requestpackage": "0.0.4"
+  }
+}

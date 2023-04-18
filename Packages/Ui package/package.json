@@ -1,0 +1,21 @@
+{
+  "name": "com.oneday.uipackage",
+  "author": {
+    "name": "Mloud"
+  },
+  "displayName": "Ui package",
+  "version": "0.0.4",
+  "unity": "2021.3",
+  "description": "Ui package and other tools",
+  "keywords": [
+    "ui",
+    "gui"
+  ],
+  "dependencies": {
+    "com.oneday.corepackage": "0.0.4",
+    "com.oneday.localizationpackage": "0.0.4",
+    "com.oneday.assetspackage": "0.0.4",
+    "com.unity.textmeshpro": "3.0.6",
+    "com.unity.addressables": "1.19.19"
+  }
+}

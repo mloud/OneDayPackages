@@ -1,0 +1,17 @@
+{
+  "name": "com.oneday.userpackage",
+  "author": {
+    "name": "Mloud"
+  },
+  "displayName": "User package",
+  "version": "0.0.4",
+  "unity": "2021.3",
+  "description": "User package and other tools",
+  "keywords": [
+    "user",
+    "login"
+  ],
+  "dependencies": {
+    "com.oneday.corepackage": "0.0.4"
+  }
+}

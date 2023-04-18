@@ -1,0 +1,21 @@
+{
+  "name": "com.oneday.openaipackage",
+  "author": {
+    "name": "Mloud"
+  },
+  "displayName": "OpenAi package",
+  "version": "0.0.4",
+  "unity": "2021.3",
+  "description": "OpenAi package and other tools",
+  "keywords": [
+    "ui",
+    "openai"
+  ],
+  "dependencies": {
+    "com.oneday.corepackage": "0.0.4",
+    "com.oneday.localizationpackage": "0.0.4",
+    "com.oneday.assetspackage": "0.0.4",
+    "com.unity.textmeshpro": "3.0.6",
+    "com.unity.addressables": "1.19.19"
+  }
+}

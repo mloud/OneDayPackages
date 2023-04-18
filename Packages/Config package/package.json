@@ -1,0 +1,16 @@
+{
+  "name": "com.oneday.configpackage",
+  "author": {
+    "name": "Mloud"
+  },
+  "displayName": "Config package",
+  "version": "0.0.4",
+  "unity": "2021.3",
+  "description": "Config package",
+  "keywords": [
+    "configuration"
+  ],
+  "dependencies": {
+    "com.oneday.corepackage": "0.0.4"
+  }
+}

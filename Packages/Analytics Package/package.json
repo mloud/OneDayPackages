@@ -1,0 +1,16 @@
+{
+  "name": "com.oneday.analyticspackage",
+  "author": {
+    "name": "Mloud"
+  },
+  "displayName": "Analytics package",
+  "version": "0.0.4",
+  "unity": "2021.3",
+  "description": "Analytics package and other tools",
+  "keywords": [
+    "analytics"
+  ],
+  "dependencies": {
+    "com.oneday.corepackage": "0.0.4"
+  }
+}

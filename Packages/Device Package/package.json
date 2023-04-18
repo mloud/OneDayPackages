@@ -1,0 +1,15 @@
+{
+  "name": "com.oneday.devicepackage",
+  "author": {
+    "name": "Mloud"
+  },
+  "displayName": "Device package",
+  "version": "0.0.4",
+  "unity": "2021.3",
+  "description": "Device package and other tools",
+  "keywords": [
+    "device"
+  ],
+  "dependencies": {
+  }
+}

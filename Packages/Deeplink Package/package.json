@@ -1,0 +1,16 @@
+{
+  "name": "com.oneday.deeplinkpackage",
+  "author": {
+    "name": "Mloud"
+  },
+  "displayName": "Deeplink package",
+  "version": "0.0.4",
+  "unity": "2021.3",
+  "description": "Deeplink package and other tools",
+  "keywords": [
+    "deeplink"
+  ],
+  "dependencies": {
+    "com.oneday.corepackage": "0.0.4"
+  }
+}

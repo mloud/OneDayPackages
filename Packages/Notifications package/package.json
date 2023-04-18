@@ -1,0 +1,17 @@
+{
+  "name": "com.oneday.notificationspackage",
+  "author": {
+    "name": "Mloud"
+  },
+  "displayName": "Notifications package",
+  "version": "0.0.4",
+  "unity": "2021.3",
+  "description": "Notifications package and other tools",
+  "keywords": [
+    "notifications"
+  ],
+  "dependencies": {
+    "com.oneday.corepackage": "0.0.4",
+    "com.oneday.permissionpackage": "0.0.4"
+  }
+}

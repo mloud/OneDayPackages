@@ -1,0 +1,18 @@
+{
+  "name": "com.oneday.textgeneratorpackage",
+  "author": {
+    "name": "Mloud"
+  },
+  "displayName": "Text generator package",
+  "version": "0.0.4",
+  "unity": "2021.3",
+  "description": "Text gerator package and other tools",
+  "keywords": [
+    "text",
+    "generator"
+  ],
+  "dependencies": {
+    "com.oneday.corepackage": "0.0.4",
+    "com.oneday.openaipackage": "0.0.4"
+  }
+}

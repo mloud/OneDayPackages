@@ -1,0 +1,16 @@
+{
+  "name": "com.oneday.permissionpackage",
+  "author": {
+    "name": "Mloud"
+  },
+  "displayName": "Permission package",
+  "version": "0.0.4",
+  "unity": "2021.3",
+  "description": "Permission package and other tools",
+  "keywords": [
+    "permission"
+  ],
+  "dependencies": {
+    "com.oneday.corepackage": "0.0.4"
+  }
+}

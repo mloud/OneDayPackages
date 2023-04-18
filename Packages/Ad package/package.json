@@ -1,0 +1,16 @@
+{
+  "name": "com.oneday.adpackage",
+  "author": {
+    "name": "Mloud"
+  },
+  "displayName": "Ad package",
+  "version": "0.0.4",
+  "unity": "2021.3",
+  "description": "Ad package and other tools",
+  "keywords": [
+    "advertisment"
+  ],
+  "dependencies": {
+    "com.oneday.corepackage": "0.0.4"
+  }
+}

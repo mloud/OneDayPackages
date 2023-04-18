@@ -1,0 +1,14 @@
+{
+  "name": "com.oneday.dotweenpackage",
+  "author": {
+    "name": "Mloud"
+  },
+  "displayName": "DOTween package",
+  "version": "1.2.705",
+  "unity": "2021.3",
+  "description": "User package and other tools",
+  "keywords": [
+  ],
+  "dependencies": {
+  }
+}

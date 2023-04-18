@@ -1,0 +1,16 @@
+{
+  "name": "com.oneday.statisticpackage",
+  "author": {
+    "name": "Mloud"
+  },
+  "displayName": "Statistic package",
+  "version": "0.0.4",
+  "unity": "2021.3",
+  "description": "Statistic package and other tools",
+  "keywords": [
+    "statistic"
+  ],
+  "dependencies": {
+    "com.oneday.corepackage": "0.0.4"
+  }
+}

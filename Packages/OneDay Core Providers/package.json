@@ -1,0 +1,19 @@
+{
+  "name": "com.oneday.providerspackage",
+  "author": {
+    "name": "Mloud"
+  },
+  "displayName": "Providers package",
+  "version": "0.0.4",
+  "unity": "2021.3",
+  "description": "Provider package",
+  "keywords": [
+    "providers"
+  ],
+  "dependencies": {
+    "com.oneday.assetspackage": "0.0.4",
+    "com.oneday.corepackage": "0.0.4",
+    "com.oneday.localizationpackage": "0.0.4",
+    "com.oneday.configpackage": "0.0.4"
+  }
+}
