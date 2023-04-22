@@ -9,5 +9,6 @@ namespace OneDay.StateMachine
 
         UniTask Run();
         UniTask<bool> MakeTransition(string triggerName);
+        UniTask Update(float dt);
     }
 }

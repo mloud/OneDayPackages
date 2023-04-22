@@ -63,6 +63,14 @@ namespace OneDay.StateMachine
             await States[CurrentState].Enter();
         }
 
+        public async UniTask Update(float dt)
+        {
+            if (CurrentState != null)
+            {
+                await States[CurrentState].Update(dt);
+            }
+        }
+        
         public async UniTask<bool> MakeTransition(string triggerName)
         {
             if (Transitions.TryGetValue(triggerName, out var transitionInfos))

@@ -8,5 +8,6 @@ namespace OneDay.StateMachine
         UniTask Setup();
         UniTask Enter();
         UniTask Leave();
+        UniTask Update(float dt);
     }
 }

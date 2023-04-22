@@ -1,4 +1,7 @@
-﻿using OneDay.CasualGame;
+﻿using Cysharp.Threading.Tasks;
+using OneDay.CasualGame;
+using OneDay.Samples.FallingBlocks.States;
+using OneDay.StateMachine;
 using UnityEngine;
 
 namespace OneDay.Samples.FallingBlocks
@@ -7,70 +10,45 @@ namespace OneDay.Samples.FallingBlocks
     {
         [SerializeField] private LevelBuilder levelBuilder;
         [SerializeField] private int level;
-        private MovingBox MovingBox { get; set; }
-        private BlockSpawner BlockSpawner { get; set; }
-
-        private enum State
+      
+        private IStateMachine StateMachine { get; set; }
+        
+        protected override UniTask OnLoad(LevelDefinition levelDefinition, int level)
         {
-            Targeting, 
-            Falling,
-            Failed
+            // create environment
+            levelBuilder.BuildLevel(levelDefinition);
+          
+            // prepare state machine for game
+            var context = new FallingBlockStateContext
+            {
+                BlockSpawner = GetComponentInChildren<BlockSpawner>(),
+                MovingBox = GetComponentInChildren<MovingBox>(),
+                LostAction = TriggerLevelFailed,
+                WinAction = ()=> TriggerLevelFinished(0),
+                PlaceholdersCount = GetComponentsInChildren<FallingBlock>().Length
+            };
+            
+            StateMachine = new StateMachine.StateMachine(StateNames.PlayState);
+            StateMachine.RegisterState(PlayStateFactory.CreateState(context), StateNames.PlayState);
+            StateMachine.RegisterState(LostStateFactory.CreateState(context), StateNames.LostState);
+            StateMachine.RegisterState(LostStateFactory.CreateState(context), StateNames.WinState);
+
+            StateMachine.RegisterTransition(TransitionsNames.ToLostState, StateNames.PlayState, StateNames.LostState);
+            StateMachine.RegisterTransition(TransitionsNames.ToWinState, StateNames.PlayState, StateNames.WinState);
+
+            return UniTask.CompletedTask;
         }
 
-        private State CurrentState { get; set; }
-        private FallingBlock FallingBlock { get; set; }
         protected override void OnPlay(LevelDefinition levelDefinition, int level)
         {
-            CurrentState = State.Targeting;
-            levelBuilder.BuildLevel(levelDefinition);
-            MovingBox = GetComponentInChildren<MovingBox>();
-            BlockSpawner =  GetComponentInChildren<BlockSpawner>();
-            MovingBox.StartMoving();
+            // start state machine
+            StateMachine.Run();
         }
 
         protected override void OnPaused(bool paused)
-        {
-            
-        }
+        { }
 
-        private void OnStoppedFalling(GameObject placeholder)
-        {
-            if (placeholder != null)
-            {
-                Destroy(placeholder);
-                CurrentState = State.Targeting;
-            }
-            else
-            {
-                Debug.LogError("LOOSE");      
-                TriggerLevelFailed();
-                CurrentState = State.Failed;
-                MovingBox.StopMoving();
-            }
-            FallingBlock.StoppedFalling = null;
-            FallingBlock = null;
-        }
-        
-        private void Update()
-        {
-            switch (CurrentState)
-            {
-                case  State.Targeting:
-                    if (Input.GetKeyDown(KeyCode.Space))
-                    {
-                        CurrentState = State.Falling;
-                        FallingBlock = BlockSpawner.Spawn(MovingBox.Direction);
-                        FallingBlock.StoppedFalling += OnStoppedFalling;
-                    }
-                    break;
-                
-                case  State.Falling:
-                    if (Input.GetKeyDown(KeyCode.Space))
-                    {
-                        FallingBlock.TryStopOnPlaceholder(); 
-                    }
-                    break;
-            }
-        }
+        private void Update() =>
+            StateMachine?.Update(Time.deltaTime);
     }
 }

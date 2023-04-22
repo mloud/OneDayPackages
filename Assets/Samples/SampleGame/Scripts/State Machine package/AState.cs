@@ -20,9 +20,15 @@ namespace OneDay.StateMachine
         {
             await OnLeave();
         }
+        
+        public async UniTask Update(float dt)
+        {
+            await OnUpdate(dt);
+        }
 
         protected virtual UniTask OnSetup() => UniTask.CompletedTask;
         protected virtual UniTask OnEnter() => UniTask.CompletedTask;
         protected virtual UniTask OnLeave() => UniTask.CompletedTask;
+        protected virtual UniTask OnUpdate(float dt) => UniTask.CompletedTask;
     }
 }
