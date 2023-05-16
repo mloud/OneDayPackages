@@ -75,7 +75,7 @@ namespace OneDay.Ui
             await screen.Hide();
         }
 
-        public async UniTask ShowPopup<TType, TData>(TData data, string specificName = null) where TType : IPopup where TData: PopupData
+        public async UniTask ShowPopup<TType, TData>(TData data, string specificName = null) where TType : IPopup where TData: UiData
         {
             var popup = specificName == null 
                 ? Popups.Find(x => x.GetType() == typeof(TType)) 

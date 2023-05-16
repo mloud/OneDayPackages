@@ -1,0 +1,17 @@
+{
+  "name": "com.oneday.gameuipackage",
+  "author": {
+    "name": "Mloud"
+  },
+  "displayName": "GameUi package",
+  "version": "0.0.4",
+  "unity": "2021.3",
+  "description": "Basic game ui",
+  "keywords": [
+    "gui"
+  ],
+  "dependencies": {
+    "com.oneday.corepackage": "0.0.4"
+    "com.oneday.uipackage": "0.0.4"
+  }
+}

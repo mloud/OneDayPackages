@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 namespace OneDay.Core
 {
@@ -9,7 +8,7 @@ namespace OneDay.Core
     {
         [SerializeField] private string interfaceName;
         [SerializeField] private Component obj;
-        private async void  Awake()
+        private async void Awake()
         {
             ObjectLocator.RegisterObject(obj, interfaceName);
             var interfaces = obj.GetType().GetInterfaces().ToArray();

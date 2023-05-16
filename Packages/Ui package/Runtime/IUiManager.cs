@@ -7,7 +7,7 @@ namespace OneDay.Ui
     {
         ILoading Loading { get; }
         UniTask SwitchScreen<TType, TData>(TData data) where TType : IScreen where TData : UiData;
-        UniTask ShowPopup<TType, TData>(TData data, string specificName = null) where TType : IPopup where TData : PopupData;
+        UniTask ShowPopup<TType, TData>(TData data, string specificName = null) where TType : IPopup where TData : UiData;
         T GetPanel<T>() where T : IPanel;
     }
 }

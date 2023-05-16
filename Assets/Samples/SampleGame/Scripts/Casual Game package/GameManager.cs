@@ -1,5 +1,9 @@
 ﻿using Cysharp.Threading.Tasks;
 using OneDay.Core;
+using OneDay.GameUi;
+using OneDay.Samples.FallingBlocks.States;
+using OneDay.StateMachine.Common;
+using OneDay.Ui;
 
 namespace OneDay.CasualGame
 {
@@ -68,6 +72,26 @@ namespace OneDay.CasualGame
                 Finished = true,
                 Score = score
             });
+
+            // TODO
+            int reward = 99;
+            int stars = 3;
+            
+            ObjectLocator.GetObject<IUiManager>().ShowPopup<LevelWinPopup, LevelWinPopupData>(new LevelWinPopupData
+            {
+                Stars = stars,
+                Reward = reward,
+                ClaimButtonAction = () =>
+                {
+                    // goto menu
+                    ObjectLocator.GetObject<IAppStateManager>().MakeTransition(TransitionsConst.ToMenuState);
+                },
+                DoubleRewardAction = () =>
+                {
+                    // goto menu
+                    ObjectLocator.GetObject<IAppStateManager>().MakeTransition(TransitionsConst.ToMenuState);
+                }
+            });
         }
 
         private void OnLevelFailed()
@@ -77,6 +101,20 @@ namespace OneDay.CasualGame
             {
                 Finished = false,
                 Score = 0
+            });
+            
+            ObjectLocator.GetObject<IUiManager>().ShowPopup<LevelLoosePopup, LevelLoosePopupData>(new LevelLoosePopupData()
+            {
+            
+                RetryButtonAction = () =>
+                {
+                    // goto menu
+                    ObjectLocator.GetObject<IAppStateManager>().MakeTransition(TransitionsConst.ToMenuState);
+                },
+                ExitButtonAction = () =>
+                {
+                    ObjectLocator.GetObject<IAppStateManager>().MakeTransition(TransitionsConst.ToMenuState);
+                }
             });
         }
     }

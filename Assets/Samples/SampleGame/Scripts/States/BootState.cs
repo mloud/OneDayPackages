@@ -8,6 +8,8 @@ using OneDay.Data.Storages;
 using OneDay.Localization;
 using OneDay.Providers;
 using OneDay.StateMachine.Common;
+using OneDay.Ui;
+using UnityEngine;
 
 namespace OneDay.Samples.FallingBlocks.States
 {
@@ -28,6 +30,8 @@ namespace OneDay.Samples.FallingBlocks.States
             ObjectLocator.RegisterObject<ILevelManager<LevelDefinition, LevelState>>(
                 new LevelManager<LevelDefinition, LevelState>("local"));
             ObjectLocator.RegisterObject<ILocalizationManager>(new LocalizationManager(new LocalTextsProvider(), null));
+            ObjectLocator.RegisterObject<IUiManager>(GameObject.FindObjectOfType<UiManager>());
+
             foreach (var managers in ObjectLocator.GetObjects<IManager>())
             {
                 await managers.Initialize();

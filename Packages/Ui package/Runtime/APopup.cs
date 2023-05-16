@@ -9,7 +9,7 @@ namespace OneDay.Ui
         void SetHidden();
     }
 
-    public abstract class APopup<TData> : UiElement, IPopup where TData : PopupData
+    public abstract class APopup<TData> : UiElement, IPopup where TData : UiData
     {
         public string Name => gameObject.name;
         
@@ -20,10 +20,15 @@ namespace OneDay.Ui
         }
 
         protected abstract UniTask OnShow(TData data);
-
+        protected virtual UniTask OnHide() => UniTask.CompletedTask;
         public async UniTask Show(object data)
         {
             await Show((TData) data);
+        }
+        public override async UniTask Hide()
+        {
+            await base.Hide();
+            await OnHide();
         }
     }
 }
